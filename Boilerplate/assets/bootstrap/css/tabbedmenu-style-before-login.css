@@ -1,0 +1,97 @@
+
+@media(min-width:768px) {
+    
+	.navbar-header {
+		min-height : 75px;
+	}
+	
+	.navbar {
+		margin:none;
+	}
+	
+	
+	
+	.navbar-brand {
+		padding-top: 25px;
+		padding-bottom: 20px;
+		padding-left: 25px;
+		font-size: 25px;
+	}
+	
+	
+	.navbar-right  {
+		padding-right: 10px;
+		padding-top: 5px;
+		color:#f2f2f2;
+		min-width:550px;
+	}
+	
+	a {
+		color: #598cc2;
+	}
+	
+	#error-message2 {
+		color:#ff3c3c;
+	}
+	
+	#error-message-from-server {
+		color:#ff3c3c;
+	}
+	
+	body{
+		background-image:url(/assets/bootstrap/img/blur-img.jpg);
+		background-size:cover;
+	}
+	
+}
+
+
+
+@media(max-width:768px) {
+    .navbar-header {
+		min-height : 75px;
+		float: left;
+		width : 150px;
+	}
+	
+	
+	.navbar {
+		margin:none;
+	}
+	
+	
+	
+	.navbar-brand {
+		padding-left: 25px;
+		font-size: 25px;
+	}
+	
+	.navbar-right  {
+		padding-right: 25px;
+		padding-top: 5px;
+		color:#f2f2f2;
+		float: right!important;
+	}
+	
+	a {
+		color: #598cc2;
+	}
+	
+	#error-message2 {
+		color:#ff3c3c;
+	}
+	
+	#error-message-from-server {
+		color:#ff3c3c;
+	}
+	
+	body{
+		background-image:url(/assets/bootstrap/img/blur-img.jpg);
+		background-size:cover;
+	}
+	
+}
+
+
+
+

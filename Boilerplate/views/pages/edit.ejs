@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+         <% include ../partials/head %>
+	</head>
+
+    <body>
+
+
+		<% include ../partials/tabbed-menu %>
+		<div id="mastercontainer">
+			<div class="container-fluid">
+				<main>
+					<h2>Edit Profile</h2>
+
+					<form id="formEdit" action="/editProfile" method="POST" class="form-horizontal">
+						<hr />
+						<h3>Edit your profile below:</h3>
+						<br/>
+							<div class="form-group">
+								<label class="control-label col-md-2">Email Id</label>
+								<div class="col-md-6">
+									<input type="text" class="form-control" value="<%=user.email%>" disabled/>
+								</div>
+								<div class="col-md-4"></div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-2">User Name</label>
+								<div class="col-md-6">
+									<input type="text" class="form-control" value="<%=user.profile.username%>" disabled/>
+								</div>
+								<div class="col-md-4"></div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-2" for="security">Enter New Security Question</label>
+								<div class="col-md-6">
+									<input  name="Security"  id="security" class="form-control" placeholder= "<%=user.profile.secQues%>" />
+								</div>
+								<div class="col-md-4"></div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-2" for="answer">Enter New Security Answer</label>
+								<div class="col-md-6">
+									<input name="Answer"  id="answer" class="form-control" placeholder="<%=user.profile.secAns%>"  />
+								</div>
+								<div class="col-md-4"></div>
+							</div>
+							
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-md-5">
+									<button type="submit" class="btn btn-primary">Update Profile</button>
+								</div>
+							</div>
+					</form>
+					
+					<div class="alert alert-danger calculator-alerts hidden" id="error-message"></div> 
+						<% if (success) { %>
+							<div id="server-success-message" class="alert alert-success" role="alert">
+								<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+								<span class="sr-only">Success:</span>
+								<%= success %>
+							</div>
+						<% } %>
+						<% if (error) { %>
+							<div id="server-error-message" class="alert alert-danger" role="alert">
+								<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+								<span class="sr-only">Error:</span>
+								<%= error %>
+							</div>
+						<% } %>
+				</main>
+			</div>
+		</div>
+
+	<% include ../partials/editscripts %>
+<% include ../partials/footer %>
+    </body>
+
+</html>

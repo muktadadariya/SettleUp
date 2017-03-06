@@ -1,0 +1,17 @@
+@media(min-width:768px) {
+  
+
+    .navbar-fixed-bottom {
+        color:white;
+    }
+}
+
+
+
+@media(max-width:768px) {
+  
+
+    .navbar-fixed-bottom {
+        color:white;
+    }
+}

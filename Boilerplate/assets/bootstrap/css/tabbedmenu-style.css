@@ -1,0 +1,163 @@
+@media print { 
+    .navbar {
+        display: block;
+        
+    }
+    .navbar-toggle {
+        display:none;
+    }
+	
+	.row { page-break-inside:avoid }
+	
+	.welcome {
+		display:none;
+	}
+	
+	a[href]:after {
+		content: none !important;
+	}
+	
+	.navbar-fixed-bottom {
+		display:none;
+	}
+	
+	.side-nav {
+		display:none;
+	}
+}
+
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 75px;
+        left: 275px;
+        width: 275px;
+        margin-left: -275px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: #222;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav button  {
+        width: 275px;
+		background-color: #222;
+		padding: 20px;
+		text-align: left
+    }
+	
+	.side-nav button  span {
+		padding-right: 40px;
+		padding-left: 20px;
+    }
+	
+    .side-nav li button:hover,
+    .side-nav li button:focus {
+        outline: none;
+        background-color: #fff !important;
+		color:#000
+    }
+	
+	.navbar-header {
+		min-height : 75px;
+		width : 150px;
+	}
+	
+	.navbar {
+		margin:none;
+	}
+	
+	
+	.navbar-brand {
+		padding-top: 25px;
+		padding-bottom: 20px;
+		padding-left: 25px;
+		font-size: 25px;
+	}
+	
+	.welcome {
+		padding-top: 25px;
+		padding-bottom: 20px;
+		padding-right: 25px;
+		font-size: 18px;
+		color:#f2f2f2;
+	}
+	
+}
+
+
+@media(max-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 75px;
+        left: 75px;
+        width: 75px;
+        margin-left: -75px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: #222;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav button  {
+        width: 75px;
+		background-color: #222;
+		padding: 20px;
+		text-align: left
+    }
+	
+	.side-nav button  span {
+		padding-right: 40px;
+		padding-left: 20px;
+    }
+	
+    .side-nav li button:hover,
+    .side-nav li button:focus {
+        outline: none;
+        background-color: #fff !important;
+		color:#000
+    }
+	
+	.navbar-right {
+		float: right!important;
+		padding-top:25px;
+		font-size: 18px;
+	}
+	
+	
+	.welcome {
+		color:#f2f2f2;
+	}
+	
+	.navbar-header {
+		
+		min-height : 75px;
+		width : 150px;
+		float: left;
+	}
+	
+	
+	.navbar {
+		margin:none;
+	}
+	
+	
+	
+	.navbar-brand {
+		padding-top: 25px;
+		padding-bottom: 20px;
+		padding-left: 25px;
+		font-size: 25px;
+	}
+	
+	
+}
+
+

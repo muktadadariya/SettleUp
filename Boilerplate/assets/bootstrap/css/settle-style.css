@@ -1,0 +1,17 @@
+@media(min-width:768px) {
+  
+	.settle-list select {
+		width: 300px;
+		height: 34px;
+		border: 1px solid #9d9d9d;
+   }
+}
+
+@media(max-width:768px) {
+  
+	.settle-list select {
+		width: 200px;
+		height: 34px;
+		border: 1px solid #9d9d9d;
+   }
+}

@@ -1,0 +1,52 @@
+	
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/">Settle Up!</a>
+		
+	</div>
+	<div class="nav navbar-right navbar-form">
+		<div class="row">
+		<form id="form2" action="/login" method="POST" class="login-form">
+			
+				<div class="form-group">
+					<label class="control-label" for="email2" hidden>Email ID</label>
+					<!-- <div class="col-md-5">  -->
+						<input type="email" name="email2" placeholder="Email ID" class="form-control" id="email2">
+					<!-- </div> -->
+					<label class="control-label" for="password2" hidden>Last name</label>
+					<!-- <div class="col-md-4">  -->
+						<input type="password" name="password2" placeholder="Password" class="form-control" id="password2">
+					<!-- </div> -->
+					<!-- <div class="col-md-1"> -->
+						<button type="submit" class="btn btn-primary">Login</button>
+					<!-- </div> -->
+				</div>
+			
+		</form>
+		</div>
+		
+		<div class="row">			
+			<div class="col-md-5">
+				
+				<div id="error-message2"><% if (errorLogin) { %>
+					<%= errorLogin %>
+				<% } %></div>
+			</div>
+			
+			
+			<div class="col-md-4">
+				<form id="form5" action="/forgotPassword" >
+					<a href="#" onclick="document.getElementById('form5').submit();">Forgot your Password?</a>
+				</form>
+			</div>
+			
+		</div>
+			
+		
+		
+	
+	</div>
+	
+	</nav>

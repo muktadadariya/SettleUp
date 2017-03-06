@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+    <link rel="stylesheet" href="/assets/bootstrap/css/tabbedmenu-style-before-login.css">
+
+
+</head>
+
+<body>
+        <% include ../partials/tabbed-menu-before-login %>
+
+	<div id="mastercontainer">
+		<div class="container-fluid">
+			<div class="container-custom">	
+				<div class="col-md-6">
+				</div>
+				<div class="col-md-4">
+					<h2>New User? Sign up now..</h2>
+					<p>Fill in the form below to Register with us:</p>                            
+					<form id="form1" action="/signup" method="POST" class="registration-form">
+						<div class="form-group">
+							<label class="sr-only" for="email">Email ID</label>
+							<input type="email" name="email" placeholder="Email ID" class="form-control" id="email">
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="username">Username</label>
+							<input name="username" PLACEHOLDER="User Name" class="form-control" id="username" />
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="password">Password</label>
+							<input type="password" name="password" placeholder="Password" class="form-control" id="password">
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="confirmPassword">Confirm Password</label>
+							<input type="password" name="confirmPassword" placeholder="Password Again" class="form-control" id="confirmPassword">
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="secQues">Security Question </label>
+							<input name="secQues" placeholder="Security Question " class="form-control" id="secQues">
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="secAns">Answer for First Security Question</label>
+							<input name="secAns" placeholder="Answer for Security Question " class="form-control" id="secAns">
+						</div>
+
+						<button type="submit" class="btn btn-primary">Sign me Up!</button>
+					</form>
+				
+					<br>
+					<% if (success) { %>
+					<div id="server-success-message" class="alert alert-success" role="alert">
+						<%= success %>
+					</div>
+					<% } %>
+					<div class="alert alert-danger calculator-alerts hidden" id="error-message"></div>
+					<% if (error) { %>
+					<div id="server-error-message" class="alert alert-danger" role="alert">
+						<%= error %>
+					</div>
+					<% } %>
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+<% include ../partials/formscripts %>
+<% include ../partials/footer %>
+</body>
+
+</html>

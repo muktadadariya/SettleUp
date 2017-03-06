@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+	<% include ../partials/bill-depedencies %>
+
+</head>
+
+<body>
+	<% include ../partials/tabbed-menu %>
+	
+	
+	<div id="mastercontainer">
+		<div class="container-fluid">			
+			<main>
+					<!-- Your main content will go here! -->
+				<h2>Add your Bill</h2>
+				<hr />
+				<h3>Please provide all the below details</h3>
+				<br/>
+					<form id="formAdd" action="/addBill" method="POST" class="form-horizontal">
+						<div class="form-group">
+							<label for="description" class="control-label col-md-2">Bill Description</label>
+							<div class="col-md-6">
+								<input type="text" name="description" class="form-control" id="description" />
+							</div>
+							<div class="col-md-4"></div>
+						</div>
+												
+						<div class="form-group">
+							<label for="amount" class="control-label col-md-2">Amount I Paid</label>
+							<div class="col-md-6">
+								<input type="number" step="0.001" name="amount" class="form-control" id="amount" min="0.001"/>
+							</div>
+							<div class="col-md-4"></div>
+						</div>
+
+						<div class="form-group">
+							<label for="datepicker" class="control-label col-md-2">Bill Date</label>
+							<div class="col-md-6">
+								<input type="text" name="datepicker" class="form-control" id="datepicker"/>
+							</div>
+							<div class="col-md-4"></div>
+						</div>
+						
+						<div class="form-group">
+							<label for="paidby" class="control-label col-md-2">Paid by</label>
+							<div class="col-md-6">
+							<% if (myUserObj) { %>
+								<input type="text" name="paidby" class="form-control" id="paidby" value="<%= myUserObj.profile.username %>" disabled/>
+							<% } %>
+							</div>
+							<div class="col-md-4"></div>
+						</div>
+						
+						
+						<div class="form-group">
+							<label for="sharedby" class="control-label col-md-2">Choose Participants</label>
+							<div class="col-md-6">
+								<% if (myUserObj.contact) { %>
+									<select multiple="multiple" id="sharedby" name="sharedby">
+									<% for(var i=0; i < myUserObj.contact.length; i++) { %>
+										<option value="<%= myUserObj.contact[i]._id %>"> <%= myUserObj.contact[i].name %> </option>
+									<% } %>
+										<option value="<%= myUserObj._id %>" > <%= myUserObj.profile.username %> </option>
+									</select>
+								<% } %>
+							</div>
+							<div class="col-md-4"></div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-md-5">
+								<button type="submit" class="btn btn-primary">Add Bill</button>	
+							</div>
+						</div>		
+	
+					</form>
+				  
+					<div class="alert alert-danger calculator-alerts hidden" id="error-message">
+					</div> 
+					
+					<% if (success) { %>
+						<div id="server-success-message" class="alert alert-success" role="alert">
+							<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+							<span class="sr-only">Success:</span>
+							<%= success %>
+						</div>
+					<% } %> 
+					<% if (error) { %>
+						<div id="server-error-message" class="alert alert-danger" role="alert">
+							<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+							<span class="sr-only">Error:</span>
+							<%= error %>
+						</div>
+					<% } %>					
+			</main>
+		</div>
+	</div>
+
+
+<% include ../partials/billscripts %>
+<% include ../partials/footer %>
+</body>
+
+</html>

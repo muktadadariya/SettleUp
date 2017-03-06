@@ -1,0 +1,65 @@
+    <link property="stylesheet" rel="stylesheet" href="/assets/bootstrap/css/tabbedmenu-style.css">
+	
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+
+	<div class="nav top-nav">
+		<div class="navbar-header">
+				<a class="navbar-brand" href="/">Settle Up!</a>			
+		</div>
+		<div class="navbar-right">
+				<label class="welcome">Welcome <%= userName %> !</label>
+		</div>
+	</div>
+	
+	<ul id= "allTabs" class="nav side-nav" role="tablist">
+	
+		
+		<li role="presentation" class="active">
+			<form id="form8" action="/dashboard" method="GET" class="form-horizontal">
+				<button type="submit" class="btn btn-primary">
+				<span class = "glyphicon glyphicon-dashboard"></span>
+				Dashboard</button>
+			</form>
+		</li>
+		<li role="presentation">
+			<form id="form9" action="/addfriend" method="GET" class="form-horizontal">
+				<button type="submit" class="btn btn-primary">
+				<span class = "glyphicon glyphicon-user"></span>
+				Add / Remove Friend</button>
+			</form>
+		</li>
+		<li role="presentation">
+			<form id="form6" action="/addBill" method="GET" class="form-horizontal">
+				<button type="submit" class="btn btn-primary">
+				<span class = "glyphicon glyphicon-list-alt"></span>
+				Add a Bill</button>
+			</form>
+		</li>
+		<li role="presentation">
+			<form id="form7" action="/settleBill" method="GET" class="form-horizontal">
+				<button type="submit" class="btn btn-primary">
+				<span class = "glyphicon glyphicon-tasks"></span>
+				Settle Balance </button>
+				
+			</form>
+		</li>
+		<li role="presentation">
+			<form id="form5" action="/editProfile" method="GET" class="form-horizontal">
+				<button type="submit" class="btn btn-primary">
+				<span class = "glyphicon glyphicon-cog"></span>
+				Edit Profile</button>
+			</form>
+		</li>
+		<li role="presentation">
+			<form id="form4" action="/logout" method="POST" class="form-horizontal">
+				<button type="submit" class="btn btn-primary">
+				<span class = "glyphicon glyphicon-off"></span>
+				Logout</button>
+			</form>
+		</li>
+	</ul>
+
+	</nav>
+
+	

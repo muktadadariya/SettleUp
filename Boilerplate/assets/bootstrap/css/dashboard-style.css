@@ -1,0 +1,43 @@
+@media(min-width:768px) {
+  
+
+	 .pie-style {
+		border-color: #4b4e55;
+	}
+
+	.pie-style  .panel-heading {
+		border-color: #4b4e55;
+		color: #fff;
+		background-color: #4b4e55;
+	}
+	
+	.table thead {
+		color:black;
+	}
+	
+	.glyphicon-ok {
+		color:green;
+	}
+}
+
+@media(max-width:768px) {
+  
+
+	 .pie-style {
+		border-color: #4b4e55;
+	}
+
+	.pie-style  .panel-heading {
+		border-color: #4b4e55;
+		color: #fff;
+		background-color: #4b4e55;
+	}
+	
+	.table thead {
+		color:black;
+	}
+	
+	.glyphicon-ok {
+		color:green;
+	}
+}

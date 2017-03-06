@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+	<link href="/assets/bootstrap/css/dashboard-style.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<% include ../partials/tabbed-menu %>
+
+	<div id="mastercontainer">
+		<div class="container-fluid">
+			<h2> Dashboard </h2>
+			<hr/>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel pie-style">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+							<span class = "glyphicon glyphicon-signal"></span>
+							I need to pay</h3>
+						</div>
+						<div id="iOweOthers"><%-JSON.stringify(iOweOthersDisplayData)%></div>
+					</div>
+				</div>
+				
+				
+				<div class="col-md-6">
+					<div class="panel pie-style">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+							<span class = "glyphicon glyphicon-signal"></span>
+							My friends pay me</h3>
+						</div>
+						<div id="theyOweMe"><%-JSON.stringify(theyOweMeDisplayData)%></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="panel pie-style">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+							<span class = "glyphicon glyphicon-road"></span>
+							Recent Activity</h3>
+						</div>
+						
+						<div class="table-responsive">
+						
+							<table class="table table-bordered table-hover">
+							
+							
+							<% if(recentActivity) { %>
+							<thead>
+								<tr>
+									 <th>Date</th>
+									 <th>Description</th>
+									 <th>Total Amount</th>
+									 <th>Bill Paid by me</th>
+									 <th>Participant of Bill</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% for(var i=0; i < recentActivity.length; i++) { %>
+								   <tr>
+									 <td><%= recentActivity[i].date.toString() %></td>
+									 <td><%= recentActivity[i].description %></td>
+									 <td><%= recentActivity[i].amount %></td>
+									 <% if(userObjId) { %>	
+										<% if(recentActivity[i].paidby == userObjId) { %>
+											<td><span class = "glyphicon glyphicon-ok"></span></td>
+										<% } else  { %>
+											<td>-</td>
+										<% } %>
+									 <% } %>
+									 <% if(userObjId) { 
+										var flag = false; %>	
+										<% for(var j=0; j < recentActivity[i].sharedby.length; j++) { %>
+											<% if(recentActivity[i].sharedby[j]._id == userObjId) { 
+													flag = true;
+											}%>
+										<% } %>
+										<% if(flag) { %>
+												<td><span class = "glyphicon glyphicon-ok"></span></td>
+											<% } else  { %>
+											<td>-</td>
+										<% } %>
+									 <% } %>
+								   </tr>
+								<% } %>
+							<% } else { %>
+								<label> No Recent Activity found! </label>
+							<% } %>
+							</tbody>
+							</table>
+						</div>
+					</div>	
+					
+				</div>
+			</div>
+		</div>	
+	</div>
+	
+	
+<% include ../partials/dashboardscripts %>
+<% include ../partials/footer %>
+</body>
+
+</html>
